@@ -1,0 +1,116 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Alexander Mahler Resume",
+    "label": "Senior Software Test Engineer",
+    "image": "",
+    "email": "asmahler@gmail.com",
+    "phone": "(480) 467-8424",
+    "url": "https://github.com/asmahler",
+    "summary": "From Los Angeles, but lives in Portland, Oregon. Hardworking, collaborative, with attention to detail. Very passionated not just about testing, but also UX/UI. I really enjoy anything Javascript related. Experienced writing test plans, test cases and working in/creating automation frameworks.",
+    "location": {
+      "address": "4557 Ne 66th Ave",
+      "postalCode": "OR 97218",
+      "city": "Portland",
+      "countryCode": "US"
+    },
+    "profiles": []
+  },
+  "skills": [
+    {
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript", 
+        "SQL",
+        "API's",
+        "C#",
+        "Python",
+        "Web/App Testing",
+        "Accessibility Testing",
+        "Performance Testing",
+        "Automation (Selenium/Cypress)"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "name": "Paylocity",
+      "location": "Portland, WA",
+      "position": "Senior Software Test Engineer",
+      "url": "https://www.paylocity.com/",
+      "startDate": "10/15/2018",
+      "endDate": "Current",
+      "summary": "Worked on the reporting product for the time and labor portion. Worked across multiple teams with automation that spaneed multiple teams to continue to deliver an amazing product for our customers",
+      "highlights": [
+        "A video thank you from our CFO from outstanding performance",
+        "Developed the first API testing Suite for the category",
+        "Helped automate every sprint to deliver an amazing product",
+        "Category quality leader to help teams hit their quality goals",
+        "Help configure the automation pipeline running on Team City",
+        "Taught Testing Workshops"
+      ]
+    },
+    {
+      "name": "Amazon",
+      "location": "Seattle, WA",
+      "position": "QA Engineer",
+      "url": "https://www.amazon.com/",
+      "startDate": "1/15/2018",
+      "endDate": "10/5/2018",
+      "summary": "Worked with product owners, offshore and developers to help ship the latest amazon fire tablet",
+      "highlights": [
+        "Shipped the new table with at least 4.5 star reviews",
+        "Built out the testing structure with offshore and test rail",
+        "Helped shaped features based off prior exprience to help develop the best product possible"
+      ]
+    },
+    {
+      "name": "DriveTime",
+      "location": "Tempe, AZ",
+      "position": "QA Engineer",
+      "url": "https://www.drivetime.com/",
+      "startDate": "6/5/2017",
+      "endDate": "12/5/2018",
+      "summary": "Working with developers, devops and product owners in a sometimes kanban/scrume style. Responsive for helping flush out requirements, creating test plans and test cases, automation and manual/exploratory testing",
+      "highlights": [
+        "Built out the UI Automation Framework",
+        "Built out the API Autiomation Framework",
+        "Redesigned how test cases are structured",
+        "Work with QA Lead to help create a uniform QA Methodology across company",
+        "Assit in mentoring junior and manual testers",
+        "Helping launch the brand new mobile site and mobile applications"
+      ]
+    },
+    {
+      "name": "MeltMedia",
+      "location": "Tempe, AZ",
+      "position": "QA Engineer",
+      "url": "https://www.meltmedia.com/",
+      "startDate": "5/5/2016",
+      "endDate": "6/1/2017",
+      "summary": "A design and development agency. Worked and own multipled projects. Built internal tools used by BA's, PO's, and Dev's",
+      "highlights": [
+        "Creating test scripts using Selenium with Python",
+        "Reviewing UX/UI designs to try to find bugs before development",
+        "Mentoring Junior testesr",
+        "Built out tons of QA Documentation",
+        "Worked on open source software"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Arizona State University",
+      "url": "https://www.asu.edu/",
+      "area": "Sociology",
+      "startDate": "2007",
+      "endDate": "2013"
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2017-12-24T15:53:00"
+  }
+}
