@@ -1,382 +1,394 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-<title>Alexander Mahler </title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-<style type="text/css">
-	@import url(
-	https://fonts.googleapis.com/css?family=Lato:400,700
-);
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Alexander Mahler Resume</title>
+    <meta name="description" content="From Los Angeles, but lives in Portland, Oregon. Hardworking, collaborative, with attention to detail. Very passionated not just about testing, but also UX/UI. I really enjoy anything Javascript related. Experienced writing test plans, test cases and working in/creating automation frameworks." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
+    <style>:root {
+  /* Colors */
+  --primaryColor: #212529;
+  --secondaryColor: #95a5a6;
+  --accentColor: #f1c40f;
+  --linkColor: #2ecc71;
+  --mutedColor: #f4f6f6;
+
+  /* Typography */
+  --ratio: 1.25;
+  --scale0: 1rem;
+  --scale1: calc(var(--scale0) * var(--ratio));
+  --scale2: calc(var(--scale1) * var(--ratio));
+  --scale3: calc(var(--scale2) * var(--ratio));
+  --scale4: calc(var(--scale3) * var(--ratio));
+  --scale5: calc(var(--scale4) * var(--ratio));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
 body {
-	background: #fff;
-	font-family: Lato, sans-serif;
-	margin: 0 0 80px;
+  color: var(--primaryColor);
+  display: grid;
+  font: 1em/1.5 Lato, sans-serif;
+  gap: 2em;
+  grid-template-columns:
+    [full-start]
+    1fr
+    [main-start side-start]
+    minmax(min-content, 12em)
+    [side-end content-start]
+    minmax(min-content, 36em)
+    [main-end content-end]
+    1fr
+    [full-end];
+  grid-template-rows: auto [content] 0;
+  margin-bottom: 4em;
 }
+
+body::before {
+  content: '';
+  grid-column: full;
+  grid-row: content;
+}
+
+ol,
+ul {
+  padding-left: 1em;
+}
+
+li + li {
+  margin-top: 0.2em;
+}
+
+li::marker {
+  color: var(--mutedColor);
+}
+
 a {
-	color: #2ecc71;
+  color: var(--linkColor);
+  text-decoration: none;
+  transition: color 0.2s;
 }
+
 a:focus,
 a:hover {
-	color: #f1c40f;
-	text-decoration: none;
+  color: var(--accentColor);
 }
-p {
-	line-height: 1.2;
-	margin: 0;
-}
-p + p {
-	margin-top: 10px;
-}
+
 h1,
 h2,
 h3,
+h5 {
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--scale5);
+}
+
+h2 {
+  color: var(--secondaryColor);
+  font-size: var(--scale4);
+}
+
+h3 {
+  color: var(--accentColor);
+  font-size: var(--scale3);
+  grid-column: side;
+  margin-bottom: 1rem;
+}
+
 h4 {
-	margin-top: 0
+  font-size: var(--scale2);
 }
-section {
-	margin-top: 20px;
+
+h5 {
+  font-size: var(--scale1);
 }
-li {
-	line-height: 1.5;
-	list-style: none;
+
+h6 {
+  font-size: var(--scale0);
 }
-li:before {
-	content: "\f052";
-	float: left;
-	font: 13px Octicons;
-	margin-top: 6px;
-	margin-left: -20px;
-	opacity: .1;
-	position: absolute;
-}
+
 blockquote {
-	border-left: 5px solid #e7e9ec;
-	font-size: 14px;
-}
-em {
-	color: #95a5a6;
-	font-weight: normal;
-	font-style: normal;
-}
-h4 span:first-child {
-	color: #000;
-	font-weight: bold;
-}
-.container {
-	max-width: 750px;
-	padding: 0 30px;
-}
-.col-sm-6 {
-	margin-bottom: 10px;
-}
-.col-sm-12 h4 {
-	margin-top: 12px; 
-}
-.col-sm-12 + .col-sm-12 {
-	margin-top: 30px;
-}
-#header {
-	background: #f4f6f6;
-	padding: 50px 0;
-	margin-bottom: 30px;
-}
-#header h2 {
-	color: #95a5a6;
-	font-size: 24px;
-}
-#content h3 {
-	color: #f1c40f;
-	font-size: 26px;
-	margin-top: -4px;
-}
-#content aside {
-	text-align: right;
-	padding-right: 30px;
-}
-#profiles .network {
-	text-transform: capitalize;
-}
-#work .position,
-#volunteer .position {
-	font-weight: bold;
-	margin-bottom: 8px;
-}
-#education .area {
-	font-weight: bold;
-}
-#education .area:before {
-	content: "\f0d7";
-	font: 16px Octicons;
-	margin-right: 6px;
-}
-#education .studyType {
-	margin-left: 25px;
-}
-#awards .summary,
-#publications .summary {
-	margin-top: 8px;
-}
-#publications .website a:before {
-	content: attr(href);
+  border-left: 0.2em solid var(--mutedColor);
+  padding-left: 1em;
 }
 
-@media (min-width: 480px) {
-	.strike-through {
-		border-top: 1px solid #f4f6f6;
-		height: 20px;
-		margin-top: 12px;
-		margin-bottom: -2px;
-		position: relative;
-	}
-	.strike-through span,
-	.strike-through a {
-		background: #fff;
-		position: absolute;
-	}
-	.strike-through span:first-child {
-		padding-right: 20px;
-		margin-top: -12px;
-	}
-	.strike-through span + span {
-		font-size: 14px;
-		margin-top: -10px;
-		padding-left: 20px;
-		right: 0;
-	}
-}
-@media (max-width: 768px) {
-	.col-sm-6:last-child {
-		margin-bottom: 0px;
-	}
-	#content aside {
-		margin-bottom: 20px;
-		padding-right: 0;
-		text-align: left;
-	}
-	#publications .website a:before {
-		content: "View publication";
-	}
-}
-@media (max-width: 480px) {
-	h1 {
-		font-size: 26px;
-	}
-	.date {
-		font-size: 14px;
-		margin-bottom: 5px;
-	}
-	.strike-through span:first-child {
-		margin-bottom: 7px;
-	}
-	.strike-through span {
-		display: block;
-	}	
-	#header {
-		margin-bottom: 10px;
-		padding: 40px 0;
-	}
-	#actions {
-		display: none;
-	}
+cite {
+  color: var(--secondaryColor);
+  font-style: inherit;
 }
 
-	</style>
-</head>
-<body>
-<header id="header">
-<div class="container">
-<div class="row">
-<div class="col-sm-9 col-sm-push-3">
-<h1>
-Alexander Mahler
-</h1>
-<h2>
-Quality Engineer
-</h2>
-</div>
-</div>
-</div>
-</header>
-<div id="content" class="container">
-<section id="contact" class="row">
-<aside class="col-sm-3">
-<h3>Contact</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-6">
-<strong>Email</strong>
-<div class="email"><a href="mailto:asmahler@gmail.com">asmahler@gmail.com</a><br></div>
-</div>
-<div class="col-sm-6">
-<strong>Phone</strong>
-<div class="phone">(480) 467-8424 </div>
-</div>
-</div>
-</div>
-</section>
-<section id="about" class="row">
-<aside class="col-sm-3">
-<h3>About</h3>
-</aside>
-<div class="col-sm-9">
-<p>From Los Angeles, but lives in Phoenix. Hardworking, collaborative, with attention to detail. Very passionated not just about testing, but also UX/UI. I really enjoy anything Javascript related. Experienced writing test plans and test cases.</p>
-</div>
-</section>
-<section id="profiles" class="row">
-<aside class="col-sm-3">
-<h3>Profiles</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-6">
-<strong class="network">
-GitHub
-</strong>
-<div class="url">
-<a href="https://github.com/asmahler">https://github.com/asmahler</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="skills" class="row">
-  <aside class="col-sm-3">
-  <h3>Skills</h3>
-  </aside>
-  <div class="col-sm-9">
-  <div class="row">
-  <div class="col-sm-6">
-  <div class="name">
-  <h4></h4>
-  </div>
-  <ul class="keywords">
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>Javascript/ES6/Typescript</li>
-  </ul>
-  </div>
-  <div class="col-sm-6">
-  <div class="name">
-  <h4></h4>
-  </div>
-  <ul class="keywords">
-  <li>Git</li>
-  <li>Python</li>
-  <li>Nodejs</li>
-  <li>SQL</li>
-  </ul>
-  </div>
-  </div>
-  </div>
-  </section>
-<section id="work" class="row">
-<aside class="col-sm-3">
-<h3>Work</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>DriveTime</span>
-<span class="date">
-6/5/2017 — Current
-</span>
-</h4>
-<div class="website pull-right">
-<a href="https://www.drivetime.com">https://www.drivetime.com</a>
-</div>
-<div class="position">
-QA Engineer
-</div>
-<div class="summary">
-<p>Working with developers, devops and product owners in a sometimes kanban/scrume style. Responsive for helping flush out requirements, creating test plans and test cases, automation and manual/exploratory testing</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">Built out the UI Automation Framework</li>
-<li class="bullet">Built out the API Autiomation Framework</li>
-<li class="bullet">Redesigned how test cases are structured</li>
-<li class="bullet">Work with QA Lead to help create a uniform QA Methodology across company</li>
-<li class="bullet">Assit in mentoring junior and manual testers</li>
-<li class="bullet">Helping launch the brand new mobile site and mobile applications</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Meltmedia</span>
-<span class="date">
-4/5/2016 — 6/2/2016
-</span>
-</h4>
-<div class="website pull-right">
-<a href="https://meltmedia.com">https://meltmedia.com</a>
-</div>
-<div class="position">
-QA Engineer
-</div>
-<div class="summary">
-<p>A design and development agency. Worked and own multipled projects. Built internal tools used by BA&#x27;s, PO&#x27;s, and Dev&#x27;s</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">Creating test scripts using Selenium with Python</li>
-<li class="bullet">Reviewing UX/UI designs to try to find bugs before development</li>
-<li class="bullet">Mentoring Junior testesr</li>
-<li class="bullet">Built out tons of QA Documentation</li>
-</ul>
-</div>
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Weebly</span>
-<span class="date">
-11/14/2014 — 4/3/2016
-</span>
-</h4>
-<div class="website pull-right">
-<a href="https://www.weebly.com">https://www.weebly.com</a>
-</div>
-<div class="position">
-QA Engineer
-</div>
-<div class="summary">
-<p>Collaborated with designers and developers to insure that all products ship to spec</p>
-</div>
-<h4>Highlights</h4>
-<ul class="highlights">
-<li class="bullet">Rebuilt the navive iOS and Android application. Was nominated for a Webby that year!</li>
-<li class="bullet">Developed and excuted test plans and test cases</li>
-<li class="bullet">Worked with developers that were in San Francisco and New York</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="education" class="row">
-<aside class="col-sm-3">
-<h3>Education</h3>
-</aside>
-<div class="col-sm-9">
-<div class="row">
-<div class="col-sm-12">
-<h4 class="strike-through">
-<span>Arizona State University</span>
-<span class="date">
-2012
-</span>
-</h4>
-<div class="area">
-Sociology
-</div>
-<div class="studyType">
-Bachelor
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
+cite::before {
+  content: '— ';
+}
+
+.masthead {
+  background: var(--mutedColor);
+  display: inherit;
+  gap: inherit;
+  grid-column: full;
+  grid-template-columns: inherit;
+  padding: 4em 0;
+  row-gap: 0;
+}
+
+.masthead > *,
+section {
+  grid-column: main;
+}
+
+article > * + *,
+blockquote > * + * {
+  margin-top: 0.6em;
+}
+
+.stack {
+  display: grid;
+  gap: 1.5em;
+}
+
+.grid-list {
+  display: grid;
+  gap: 1em;
+}
+
+.spaced-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spaced-list:first-child::before {
+  border-bottom: 1px solid var(--mutedColor);
+  content: '';
+  flex-grow: 1;
+  margin: 0 1em;
+  order: 1;
+}
+
+.spaced-list > :nth-child(2) {
+  order: 2;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.tag-list > li {
+  background: var(--mutedColor);
+  margin: 0 0.2em 0.2em 0;
+  padding: 0.2em 0.6em;
+}
+
+@media print, (min-width: 48em) {
+  h3 {
+    text-align: right;
+    margin-bottom: inherit;
+  }
+
+  .masthead > *,
+  section {
+    grid-column: content;
+  }
+
+  section {
+    display: contents;
+  }
+
+  .grid-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+  </head>
+  <body>
+      <header class="masthead">
+          <h1>Alexander Mahler Resume</h1>
+          <h2>Senior Software Test Engineer</h2>
+      </header>
+      <section id="contact">
+        <h3>Contact</h3>
+        <div class="grid-list">
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:asmahler@gmail.com">asmahler@gmail.com</a>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              (480) 467-8424
+            </div>
+            <div>
+              <h4>Website</h4>
+              <a href="https://github.com/asmahler">github.com/asmahler</a>
+            </div>
+        </div>
+      </section>
+        <section id="about">
+          <h3>About</h3>
+          <article>
+            <p>From Los Angeles, but lives in Portland, Oregon. Hardworking, collaborative, with attention to detail. Very passionated not just about testing, but also UX/UI. I really enjoy anything Javascript related. Experienced writing test plans, test cases and working in/creating automation frameworks.</p>
+          </article>
+        </section>
+
+      <section id="work">
+        <h3>Work</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Paylocity</h4>
+                  <span>
+                    <time datetime="10/15/2018">Oct 2018</time> –
+                    <time datetime="Current">Invalid Date</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Senior Software Test Engineer</strong>
+                    <a href="https://www.paylocity.com/">www.paylocity.com</a>
+                </div>
+              </header>
+                <p>Worked on the reporting product for the time and labor portion. Worked across multiple teams with automation that spaneed multiple teams to continue to deliver an amazing product for our customers</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>A video thank you from our CFO from outstanding performance</li>
+                    <li>Developed the first API testing Suite for the category</li>
+                    <li>Helped automate every sprint to deliver an amazing product</li>
+                    <li>Category quality leader to help teams hit their quality goals</li>
+                    <li>Help configure the automation pipeline running on Team City</li>
+                    <li>Taught Testing Workshops</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Amazon</h4>
+                  <span>
+                    <time datetime="1/15/2018">Jan 2018</time> –
+                    <time datetime="10/5/2018">Oct 2018</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>QA Engineer</strong>
+                    <a href="https://www.amazon.com/">www.amazon.com</a>
+                </div>
+              </header>
+                <p>Worked with product owners, offshore and developers to help ship the latest amazon fire tablet</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>Shipped the new table with at least 4.5 star reviews</li>
+                    <li>Built out the testing structure with offshore and test rail</li>
+                    <li>Helped shaped features based off prior exprience to help develop the best product possible</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>DriveTime</h4>
+                  <span>
+                    <time datetime="6/5/2017">Jun 2017</time> –
+                    <time datetime="12/5/2018">Dec 2018</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>QA Engineer</strong>
+                    <a href="https://www.drivetime.com/">www.drivetime.com</a>
+                </div>
+              </header>
+                <p>Working with developers, devops and product owners in a sometimes kanban/scrume style. Responsive for helping flush out requirements, creating test plans and test cases, automation and manual/exploratory testing</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>Built out the UI Automation Framework</li>
+                    <li>Built out the API Autiomation Framework</li>
+                    <li>Redesigned how test cases are structured</li>
+                    <li>Work with QA Lead to help create a uniform QA Methodology across company</li>
+                    <li>Assit in mentoring junior and manual testers</li>
+                    <li>Helping launch the brand new mobile site and mobile applications</li>
+                </ul>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>MeltMedia</h4>
+                  <span>
+                    <time datetime="5/5/2016">May 2016</time> –
+                    <time datetime="6/1/2017">Jun 2017</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>QA Engineer</strong>
+                    <a href="https://www.meltmedia.com/">www.meltmedia.com</a>
+                </div>
+              </header>
+                <p>A design and development agency. Worked and own multipled projects. Built internal tools used by BA's, PO's, and Dev's</p>
+                <h5>Highlights</h5>
+                <ul>
+                    <li>Creating test scripts using Selenium with Python</li>
+                    <li>Reviewing UX/UI designs to try to find bugs before development</li>
+                    <li>Mentoring Junior testesr</li>
+                    <li>Built out tons of QA Documentation</li>
+                    <li>Worked on open source software</li>
+                </ul>
+            </article>
+        </div>
+      </section>
+      <section id="education">
+        <h3>Education</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Arizona State University</h4>
+                  <span>
+                    <time datetime="2007">Jan 2007</time> –
+                    <time datetime="2013">Jan 2013</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Sociology</strong>
+                    <a href="https://www.asu.edu/">www.asu.edu</a>
+                </div>
+              </header>
+            </article>
+        </div>
+      </section>
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="grid-list">
+            <div>
+                <ul class="tag-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>SQL</li>
+                    <li>API&#x27;s</li>
+                    <li>C#</li>
+                    <li>Python</li>
+                    <li>Web/App Testing</li>
+                    <li>Accessibility Testing</li>
+                    <li>Performance Testing</li>
+                    <li>Automation (Selenium/Cypress)</li>
+                </ul>
+            </div>
+        </div>
+      </section>
+  </body>
 </html>
